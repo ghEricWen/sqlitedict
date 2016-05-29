@@ -89,7 +89,9 @@ public class FrameMain {
 		listCandidates.addListSelectionListener(new ListSelectionListener(){
 
 			@Override
-			public void valueChanged(ListSelectionEvent e) {
+			public void valueChanged(ListSelectionEvent e) {				
+				if(defaultListModel.isEmpty())
+					return;
 				int index = listCandidates.getSelectedIndex();
 				Word word = defaultListModel.getElementAt(index);
 				labelWord.setText(word.getWord().trim());
